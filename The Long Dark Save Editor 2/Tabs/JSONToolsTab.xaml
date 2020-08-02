@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="The_Long_Dark_Save_Editor_2.Tabs.JSONToolsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:The_Long_Dark_Save_Editor_2.Tabs"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Height="500.0" Width="800.0">
+
+    <StackPanel>
+        <StackPanel Margin="10 20">
+            <Label Content="These tools are intended for people who know what they are doing. You can mess up things, as opposed to the save editor." FontSize="12"/>
+            <Label Content="Saving to JSON converts your selected game to the JSON format, and converting it back overwrites them with files found where they are saved." FontSize="12"/>
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Height="40" Click="JSONLoadClicked" Content="Save -> JSON"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Height="40" Click="JSONSaveClicked" Content="JSON -> Save"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Height="40" HorizontalAlignment="Right" Click="JSONLoadPClicked" Content="Profile -> JSON"/>
+                    <Button Style="{StaticResource MaterialDesignFlatButtonNoRounding}" Height="40" HorizontalAlignment="Right" Click="JSONSavePClicked" Content="JSON -> Profile"/>
+                </StackPanel>
+            </DockPanel>
+            <CheckBox Name="DeserializeGlobalCheckBox" Content="Deserialize .global.json" Margin="5 0"/>
+        </StackPanel>
+        <StackPanel Margin="10 20">
+            <TextBlock HorizontalAlignment="Left" Style="{StaticResource MaterialDesignTitleTextBlock}">Serializing</TextBlock>
+            <DockPanel>
+                <Label Content="Some entries in JSON are serialized. This utility will help you to deserialize these parts to readabilty and back." FontSize="12"/>
+                <Label Name="BadData" HorizontalAlignment="Right" Content="Bad Input" FontSize="12" Background="Beige"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Serialized:" HorizontalAlignment="Left" Margin="0 5"></Label>
+                <TextBox Name="Serialized" Text="&quot;&quot;" HorizontalAlignment="Right" Margin="10 0" Width="600" Height="120" VerticalContentAlignment="Top" TextChanged="SerializedChanged"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Deserialized:" HorizontalAlignment="Left" Margin="0 5"></Label>
+                <TextBox Name="Deserialized" Text="" HorizontalAlignment="Right" Margin="10 0" Width="600" Height="120" VerticalContentAlignment="Top" TextChanged="DeserializedChanged"/>
+            </DockPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

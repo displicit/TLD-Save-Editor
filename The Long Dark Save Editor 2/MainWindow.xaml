@@ -136,6 +136,12 @@
                             <tabs:InventoryTab />
                         </DockPanel>
                     </TabItem>
+                    <TabItem Header="{x:Static p:Resources.JSONTools}">
+                        <DockPanel IsEnabled="{Binding CurrentSave, Converter={StaticResource ObjectNotNullConverter}}">
+                            <Rectangle Fill="#A6B8C3" Height="1" DockPanel.Dock="Top"></Rectangle>
+                            <tabs:JSONToolsTab />
+                        </DockPanel>
+                    </TabItem>
                     <TabItem Header="{x:Static p:Resources.About}">
                         <StackPanel>
                             <Rectangle Fill="#A6B8C3" Height="1" ></Rectangle>

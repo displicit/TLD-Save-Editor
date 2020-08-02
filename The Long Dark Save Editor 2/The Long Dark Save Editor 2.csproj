@@ -169,6 +169,9 @@
     <Compile Include="Tabs\SkillsTab.xaml.cs">
       <DependentUpon>SkillsTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\JSONToolsTab.xaml.cs">
+      <DependentUpon>JSONToolsTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BusyDialogViewModel.cs" />
     <Compile Include="ViewModels\ErrorDialogViewModel.cs" />
     <Compile Include="ViewModels\SaveFileUpdatedViewModel.cs" />
@@ -225,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\SkillsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\JSONToolsTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -163,7 +163,7 @@ namespace The_Long_Dark_Save_Editor_2
 
             if (Directory.Exists(path))
             {
-                var profile = Directory.GetFiles(path, "user001.*")
+                var profile = Directory.GetFiles(path, "user001")
                                 .Select(file => new FileInfo(file))
                                 .OrderByDescending(file => file.LastWriteTime)
                                 .FirstOrDefault()?.FullName;

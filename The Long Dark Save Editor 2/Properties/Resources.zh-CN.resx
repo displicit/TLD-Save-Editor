@@ -1898,4 +1898,7 @@
   <data name="Unknown" xml:space="preserve">
     <value>未知</value>
   </data>
+  <data name="JSONTools" xml:space="preserve">
+    <value>JSON 工具</value>
+  </data>
 </root>

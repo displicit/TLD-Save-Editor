@@ -5011,6 +5011,16 @@ namespace The_Long_Dark_Save_Editor_2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JSON Tools.
+        /// </summary>
+        public static string JSONTools {
+            get {
+                return ResourceManager.GetString("JSONTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
         ///   Looks up a localized string similar to Map.
         /// </summary>
         public static string Map {

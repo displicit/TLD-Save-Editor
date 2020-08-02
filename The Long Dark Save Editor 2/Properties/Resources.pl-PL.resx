@@ -1887,4 +1887,7 @@
   <data name="RegionsWithMap_CanneryRegion" xml:space="preserve">
     <value>Bleak Inlet</value>
   </data>
+  <data name="JSONTools" xml:space="preserve">
+    <value>JSON Narzędzia</value>
+  </data>
 </root>
