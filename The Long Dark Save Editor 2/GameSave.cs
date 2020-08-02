@@ -61,7 +61,7 @@ namespace The_Long_Dark_Save_Editor_2
             }
             Global.GameManagerData.SceneTransition.m_SceneSaveFilenameCurrent = Boot.m_SceneName.Value;
             Global.GameManagerData.SceneTransition.m_SceneSaveFilenameNextLoad = Boot.m_SceneName.Value;
-            Global.PlayerManager.m_CheatsUsed = true;
+            Global.PlayerManager.m_CheatsUsed = false;
             Afflictions.SerializeTo(Global);
 
             var globalSerialized = dynamicGlobal.Serialize();

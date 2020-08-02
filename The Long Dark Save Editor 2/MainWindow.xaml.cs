@@ -93,10 +93,6 @@ namespace The_Long_Dark_Save_Editor_2
         {
             Debug.WriteLine("Window loaded");
 #if !DEBUG
-            
-            CheckForUpdates();
-            LogOpen();
-
             if (!Properties.Settings.Default.BugReportWarningShown)
             {
                 System.Windows.MessageBox.Show("DO NOT report any in-game bugs to Hinterland if you have edited your save. Bugs might be caused by the save editor. Only report bugs if you are able to reproduce them in fresh unedited save.");
@@ -182,55 +178,11 @@ namespace The_Long_Dark_Save_Editor_2
 
         }
 
-        async public void CheckForUpdates()
-        {
+        public void CheckForUpdates()
+        {}
 
-            try
-            {
-                WebClient webClient = new WebClient();
-                string json = await webClient.DownloadStringTaskAsync("https://tld-save-editor-2.firebaseio.com/Changelog.json");
-
-                List<VersionData> versions = JsonConvert.DeserializeObject<List<VersionData>>(json);
-                if (versions[versions.Count - 1] > Version)
-                {
-                    var newerVersions = versions.Where(version => version > Version).ToList();
-
-                    SnackBar.MessageQueue.Enqueue("New version available", "Download", () =>
-                    {
-                        try
-                        {
-                            string url = newerVersions[newerVersions.Count - 1].url;
-                            Uri uri = new Uri(url);
-                            if (string.Equals(uri.Host, "www.moddb.com", StringComparison.OrdinalIgnoreCase))
-                            {
-                                Process.Start(url);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                    });
-                }
-            }
-            catch (Exception ex)
-            {
-                SnackBar.MessageQueue.Enqueue("Failed to check for new versions: " + ex.GetType().FullName);
-            }
-        }
-
-        async public void LogOpen()
-        {
-            try
-            {
-                WebClient webClient = new WebClient();
-                await webClient.DownloadStringTaskAsync("https://us-central1-tld-save-editor-2.cloudfunctions.net/editorOpened?version=" + Version);
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+        public void LogOpen()
+        {}
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
